@@ -12,14 +12,14 @@
   <div id="app">
     <div class="stats">
       <h3 class="stats__title">{{"Текущих задач: "+ tasks.length}}</h3>
+        <div class="add_task">
+            <div class="add_task__input ">
+              <input placeholder="Новая задача..." type="text" v-model="new_task.title">
+            </div>
+          <button type="submit" class="add_task__btn" @click="add_task" >ADD</button>
+        </div>
     </div>
     <task @task_done="delete_task(index)" :key="index" v-for="(data,index) in tasks" :data="data" ></task>
-    <div class="add_task">
-      <div class="add_task__input ">
-          <input placeholder="Новая задача..." type="text" v-model="new_task.title">
-      </div>
-      <button class="add_task__btn" @click="add_task">ADD</button>
-    </div>
   </div>
 </body>
 <script src="script.js"></script>
