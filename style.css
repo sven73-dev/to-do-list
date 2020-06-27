@@ -15,7 +15,7 @@
 .stats {
   margin: 0px;
 }
-.stats__title {
+.statsTitle {
   margin: -10px -10px 10px -10px;
   padding: 10px;
   background-color: #3366CC;
@@ -34,45 +34,45 @@
 .task:hover {
   background-color: #2f485811;
 }
-.task__title {
+.taskTitle {
   font-size: 18px;
 }
-.task__desc {
+.taskDesc {
   font-weight: 500;
   font-size: 16px;
 }
-.task__done {
+.taskDone {
   height: 30px;
   width: 30px !important;
   border: none;
   background-color: unset;
 }
-.task__done:hover {
+.taskDone:hover {
   cursor: pointer;
   border-radius: 4px;
   background-color: #9ee493bb;
 }
-.add_task {
+.addTask {
   display: flex;
   
 }
-.add_task__input {
+.addTaskInput {
   width: 80%;
 }
 
-.add_task__input input {
+.addTaskInput input {
   width: 186px;
   height: 25px;
   font-size: 20px;
 }
-.add_task__btn {
+.addTaskBtn {
   width: 40%;
   border: 2px solid #e34761;
   margin-left: 10px;
   background: #f3dbdf;
   font-size: 15px;
 }
-.add_task__btn:hover {
+.addTaskBtn:hover {
   cursor: pointer;
   border-radius: 4px;
   background-color: #2f485811;

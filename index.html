@@ -4,23 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <title>Список задач</title>
 </head>
 <body>
-  <div id="app">
-    <div class="stats">
-      <h3 class="stats__title">{{"Текущих задач: "+ tasks.length}}</h3>
-        <div class="add_task">
-            <div class="add_task__input ">
-              <input placeholder="Новая задача..." type="text" v-model="new_task.title">
-            </div>
-          <button type="submit" class="add_task__btn" @click="add_task" >ADD</button>
-        </div>
-    </div>
-    <task @task_done="delete_task(index)" :key="index" v-for="(data,index) in tasks" :data="data" ></task>
-  </div>
+	<div id="app">
+	    <div class="stats">
+	      	<h3 class="statsTitle">{{"Текущих задач: "+ tasks.length}}</h3>
+	      	<form @submit.prevent="addTask">
+	        	<div class="addTask">
+	            	<div class="addTaskInput ">
+	              		<input placeholder="Новая задача..." type="text" id="inp1" v-model="newTask.title">
+	            	</div>
+	          		<button id="idOfTextbox" type="submit" class="addTaskBtn" >ADD</button>
+	      		</div>
+	        </form>
+	    </div>
+	    <task @task_done="deleteTask(index)" :key="index" v-for="(data,index) in tasks" :data="data" ></task>
+	</div>
 </body>
-<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer=""></script>
+<script src="script.js" defer=""></script>
 </html>
