@@ -5,17 +5,17 @@ Vue.component('task',{
     }
   },
   methods: {
-    task_done(){
-      this.$emit('task_done')
+    taskDone(){
+      this.$emit('taskDone')
     }
   },
   template: `
   <div class="task">
     <div>
-      <h3 class="task__title">{{data.title}}</h3>
-      <p v-if="data.desc!=''" class="task__desc">{{data.desc}}</p>
+      <h3 class="taskTitle">{{data.title}}</h3>
+      <p v-if="data.desc!=''" class="taskDesc">{{data.desc}}</p>
     </div>
-    <button class="task__done" @click="task_done()">❌</button>
+    <button class="taskDone" @click="taskDone()">❌</button>
   </div>`
 })
 
@@ -23,24 +23,24 @@ var vue = new Vue({
   el: '#app',
   data: {
     string: 'asdasda',
-    new_task: {
+    newTask: {
       title: '',
       desc: ''
     },
     tasks : []
   },
   methods: {
-    add_task(){
-      if(this.new_task.title != ''){
+    addTask(){
+      if(this.newTask.title != ''){
         this.tasks.push({
-          title: this.new_task.title,
-          desc: this.new_task.desc
+          title: this.newTask.title,
+          desc: this.newTask.desc
         });
-        this.new_task.title='';
-        this.new_task.desc='';
+        this.newTask.title='';
+        this.newTask.desc='';
       }
     },
-    delete_task(id){
+    deleteTask(id){
       this.tasks.splice(id,1);
     }
   }
